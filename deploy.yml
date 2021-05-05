@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: myapp3-deployment
+
+spec:
+  replicas: 3 #inside this deployment i want to create three pod
+  selector:
+    matchLabels: #match expression
+      app: myapp3 #deploy.spec.sector.matchlabels this is like an key value
+  template: #we will provide the template to deploy your image inside your container.    
+    metadata:
+      name: myapp3-pod
+      labels:
+        app: myapp3 # we are define label for my container. it means all my container inisde the pod will launch with this lable 
+    spec:
+      containers:
+        - name: myapp3-container
+          image: stacksimplify/kubenginx:3.0.0
+          ports:
+            - containerPort: 80    
