@@ -7,5 +7,5 @@ spec:
   accessModes:
     - "ReadWriteOnce"
   resources: #how much my pod can request the resource. 
-    request:
+    requests:
       storage: 5Gi #the pod cannot use more than 5Gb of storage. 
