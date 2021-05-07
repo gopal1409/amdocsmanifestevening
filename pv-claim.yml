@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: manual #we are mounting pv with PVC whcih can be consumed by Pod
+  accessModes:
+    - "ReadWriteOnce"
+  resources: #how much my pod can request the resource. 
+    request:
+      storage: 5Gi #the pod cannot use more than 5Gb of storage. 
