@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  selector:
+    app: mysql #this should match with the label i provided in mysql deployment file
+  ports:
+  - port: 3306
+  clusterIP: None #this means that we going to use the Pod IP  
