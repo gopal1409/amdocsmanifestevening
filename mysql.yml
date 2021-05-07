@@ -9,7 +9,7 @@ spec:
       app: mysql 
   strategy:
     type: Recreate
-  tempalte:
+  template:
     metadata:
       labels:
         app: mysql
