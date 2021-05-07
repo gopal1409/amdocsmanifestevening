@@ -8,6 +8,4 @@ spec:
   type: NodePort #ClusterIp or Loadbalancer
   selector:
     app: usermgmt-webapp
-  ports:
-    - port: 8080
-      targetPort: 8080
+  
