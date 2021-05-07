@@ -9,4 +9,5 @@ spec:
   selector:
     app: usermgmt-webapp
   ports:
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
