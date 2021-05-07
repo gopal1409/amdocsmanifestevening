@@ -4,6 +4,15 @@ metadata:
   name: myapp3-deployment
 
 spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringScheduleIgnoredDuringExecution:
+        nodeSelectoTerms
+        - matchExpression
+          - key: disktype
+            Operator: In 
+            values:
+            - ssd
   replicas: 3 #inside this deployment i want to create three pod
   selector:
     matchLabels: #match expression
