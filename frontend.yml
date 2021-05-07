@@ -18,20 +18,21 @@ spec:
         - name: usermgmt-webapp
           image: stacksimplify/kube-usermgmt-webapp:1.0.0-MySQLDB
           imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
           env:
+            - name: DB_HOSTNAME
+              value: "mysql"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_NAME
+              value: "webappdb"      
+            - name: DB_USERNAME
+              value: "root"  
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-dbpassword
-                  key: db-password
-            - name: DBHOSTNAME
-              value: "mysql"
-            - name: DB_PORT
-              value: "3306"
-            - name: DBUSERNAME
-              value: "root"
-            - name: DB_NAME
-              value: "webappdb"      
-          ports:
-            - containerPort: 8080
+                  key: db-password  
+          
               
