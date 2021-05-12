@@ -26,7 +26,7 @@ spec:
           requests:
             cpu: 100m
             memory: 200Mi 
-        volueMounts:
+        volumeMounts:
         - name: varlog
           mountPath: /var/log
         - name: varlibdockercontainers
