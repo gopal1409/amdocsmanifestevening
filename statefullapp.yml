@@ -19,6 +19,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
+  ---
   serviceName: "nginx"
   replicas: 3
   template:
